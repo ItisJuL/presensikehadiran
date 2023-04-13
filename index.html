@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Presensi Kehadiran</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Presensi Kehadiran</h1>
+    <div class="jamhari">
+        <h2>Daftar hadir siswa TJKT</h2>
+
+    <script language="JavaScript">
+        var tanggallengkap = new String();
+        var namahari = ("Minggu Senin Selasa Rabu Kamis Jumat Sabtu");
+        namahari = namahari.split(" ");
+        var namabulan = ("Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember");
+        namabulan = namabulan.split(" ");
+        var tgl = new Date();
+        var hari = tgl.getDay();
+        var tanggal = tgl.getDate();
+        var bulan = tgl.getMonth();
+        var tahun = tgl.getFullYear();
+        tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " + tahun;
+        </script>
+        <h5><script language='JavaScript'>document.write(tanggallengkap);</script></h5>
+    </div>
+
+    <div class="form">
+      <div class="form-group">
+        <label for="nama"><b>Nama</b></label>
+        <input type="text" id="Nama" name="nama"  autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="nis"><b>NIS</b></label>
+        <input type="number" id="Nis" name="nis"  autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="jurusan"><b>Mata Pelajaran</b></label>
+        <input type="text" id="Mapel" name="ttl"  autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="hp"><b>No. HP</b></label>
+        <input type="number" id="Nomor" name="hp"  autocomplete="off">
+      </div>
+      <button onclick="setOutput()"><b>Submit</b></button>
+    </div>
+
+    <br><br>
+    
+    <h1 id="output"></h1>
+    <script>
+      function setOutput() {
+        const nama = document.getElementById('Nama')
+        const nis = document.getElementById('Nis')
+        const mapel = document.getElementById('Mapel')
+        const hp = document.getElementById('Nomor')
+        const output = document.getElementById('output')
+        output.innerHTML = nama.value + ' ' + nis.value + ' ' + mapel.value + ' ' + hp.value
+      }
+    </script>
+
+  </body>
+</html>
